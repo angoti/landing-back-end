@@ -2,7 +2,7 @@ logging:
   level:
     root: INFO
     org.springframework.web: INFO
-    org.springframework.security: INFO
+    org.springframework.security: TRACE
 
 jwt:
   private.key: classpath:app.key

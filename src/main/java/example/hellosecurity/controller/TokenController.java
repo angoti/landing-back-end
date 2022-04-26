@@ -20,14 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TokenController {
 
-    @Autowired
-    JwtEncoder encoder;
+	@Autowired
+	JwtEncoder encoder;
 
-    @PostMapping("/token")
-    public String token(Authentication authentication) {
-		System.out.println("-------------> " + authentication.getPrincipal().toString());
-        Instant now = Instant.now();
-        long expiry = 36000L;
+	@PostMapping("/token")
+	public String token(Authentication authentication) {
+		Instant now = Instant.now();
+		long expiry = 36000L;
 		String scope = authentication.getAuthorities().stream()
 				.map(GrantedAuthority::getAuthority)
 				.collect(Collectors.joining(" "));
@@ -38,7 +37,7 @@ public class TokenController {
 				.subject(authentication.getName())
 				.claim("scope", scope)
 				.build();
-        return this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
-    }
+		return this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
+	}
 
 }
