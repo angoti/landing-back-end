@@ -47,7 +47,7 @@ public class RestConfig {
         http
                 .authorizeHttpRequests((authorize) -> authorize
                         .anyRequest().authenticated())
-                .csrf((csrf) -> csrf.ignoringAntMatchers("/token","/signin"))
+                .csrf((csrf) -> csrf.ignoringAntMatchers("/token", "/signin"))
                 .httpBasic(Customizer.withDefaults())
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
                 .sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
@@ -59,7 +59,6 @@ public class RestConfig {
 
     @Bean
     UserDetailsService users() {
-        System.out.println("------------------------- users");
         return new InMemoryUserDetailsManager(
                 User.withUsername("usuario")
                         .password("{noop}123456")
@@ -69,14 +68,11 @@ public class RestConfig {
 
     @Bean
     JwtDecoder jwtDecoder() {
-        System.out.println("------------------------- jwtDecoder");
-
         return NimbusJwtDecoder.withPublicKey(this.key).build();
     }
 
     @Bean
     JwtEncoder jwtEncoder() {
-        System.out.println("------------------------- jwtEncoder");
         JWK jwk = new RSAKey.Builder(this.key).privateKey(this.priv).build();
         JWKSource<SecurityContext> jwks = new ImmutableJWKSet<>(new JWKSet(jwk));
         return new NimbusJwtEncoder(jwks);
