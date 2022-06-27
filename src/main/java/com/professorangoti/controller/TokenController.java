@@ -1,4 +1,4 @@
-package example.hellosecurity.controller;
+package com.professorangoti.controller;
 
 import java.time.Instant;
 import java.util.stream.Collectors;
@@ -9,15 +9,12 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * A controller for the token resource.
- *
- * @author Josh Cummings
- */
 @RestController
+@CrossOrigin
 public class TokenController {
 
 	@Autowired
@@ -26,7 +23,7 @@ public class TokenController {
 	@PostMapping("/token")
 	public String token(Authentication authentication) {
 		Instant now = Instant.now();
-		long expiry = 36000L;
+		long expiry = 60;
 		String scope = authentication.getAuthorities().stream()
 				.map(GrantedAuthority::getAuthority)
 				.collect(Collectors.joining(" "));

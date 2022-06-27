@@ -1,11 +1,11 @@
-package example.hellosecurity.security;
+package com.professorangoti.security;
 
 import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import example.hellosecurity.domain.User;
+import com.professorangoti.domain.User;
 
 public class MyUserDetails implements UserDetails {
 

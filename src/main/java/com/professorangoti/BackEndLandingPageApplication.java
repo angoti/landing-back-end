@@ -1,13 +1,13 @@
-package example.hellosecurity;
+package com.professorangoti;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HelloSecurityApplication {
+public class BackEndLandingPageApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HelloSecurityApplication.class, args);
+		SpringApplication.run(BackEndLandingPageApplication.class, args);
 	}
 
 }

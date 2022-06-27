@@ -1,12 +1,12 @@
-package example.hellosecurity.security;
+package com.professorangoti.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import example.hellosecurity.domain.User;
-import example.hellosecurity.repository.UserRepository;
+import com.professorangoti.domain.User;
+import com.professorangoti.repository.UserRepository;
 
 public class MyUserDetailsService implements UserDetailsService {
 
