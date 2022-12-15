@@ -14,10 +14,10 @@ public class BackEndLandingPageApplication implements CommandLineRunner {
 		SpringApplication.run(BackEndLandingPageApplication.class, args);
 	}
 
-	@Value("${SPRING_DATASOURCE_URL}")
-	private String SPRING_DATASOURCE_URL;
 	@Value("${SPRING_DATASOURCE_USERNAME}")
 	private String SPRING_DATASOURCE_USERNAME;
+	@Value("${SPRING_DATASOURCE_URL}")
+	private String SPRING_DATASOURCE_URL;
 	@Value("${SPRING_DATASOURCE_PASSWORD}")
 	private String SPRING_DATASOURCE_PASSWORD;
 	private final Logger logger = LoggerFactory.getLogger(getClass());
