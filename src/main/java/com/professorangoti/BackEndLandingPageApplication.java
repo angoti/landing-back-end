@@ -24,9 +24,9 @@ public class BackEndLandingPageApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... strings) throws Exception {
-		logger.info("SPRING_DATASOURCE_URL: ", SPRING_DATASOURCE_URL);
-		logger.info("SPRING_DATASOURCE_USERNAME: ", SPRING_DATASOURCE_USERNAME);
-		logger.info("SPRING_DATASOURCE_PASSWORD: ", SPRING_DATASOURCE_PASSWORD);
+		logger.info("------------> SPRING_DATASOURCE_URL: ", SPRING_DATASOURCE_URL);
+		logger.info("------------> SPRING_DATASOURCE_USERNAME: ", SPRING_DATASOURCE_USERNAME);
+		logger.info("------------> SPRING_DATASOURCE_PASSWORD: ", SPRING_DATASOURCE_PASSWORD);
 	}
 
 }
